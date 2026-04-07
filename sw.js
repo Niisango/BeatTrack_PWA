@@ -3,7 +3,7 @@
  * キャッシュの管理とオフライン動作の制御
  */
 
-const CACHE_NAME = 'beattrack-cache-v1.2.2';
+const CACHE_NAME = 'beattrack-cache-v1.2.5';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
