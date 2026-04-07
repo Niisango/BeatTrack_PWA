@@ -6,7 +6,7 @@
 const CACHE_NAME = 'beattrack-cache-v1.2.2';
 const ASSETS_TO_CACHE = [
   './',
-  './music_game_search.html',
+  './index.html',
   './CHANGELOG.md',
   'https://cdn.tailwindcss.com',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap'
