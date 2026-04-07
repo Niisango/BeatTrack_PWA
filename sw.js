@@ -1,16 +1,14 @@
 /**
- * BeatTrack PWA - Service Worker
+ * BeatTrack PWA - Service Worker (Tailwind CSS v4 Ready)
  * キャッシュの管理とオフライン動作の制御
  */
 
-const CACHE_NAME = 'beattrack-cache-v1.2.5';
+const CACHE_NAME = 'beattrack-cache-v1.2.3';
 const ASSETS_TO_CACHE = [
   './',
-  './index.html',
+  './music_game_search.html',
   './CHANGELOG.md',
-  './style.css',
-  './manifest.json',
-  './tailwind.css',
+  'https://unpkg.com/tailwindcss@4',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap'
 ];
 
@@ -21,7 +19,6 @@ self.addEventListener('install', (event) => {
       return cache.addAll(ASSETS_TO_CACHE);
     })
   );
-  // 新しいサービスワーカーをすぐにアクティブにする
   self.skipWaiting();
 });
 
@@ -38,7 +35,6 @@ self.addEventListener('activate', (event) => {
       );
     })
   );
-  // クライアントの制御を即座に開始
   self.clients.claim();
 });
 
@@ -47,8 +43,7 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(event.request)
       .then((response) => {
-        // 正常なレスポンスがあればキャッシュを更新して返す
-        if (response && response.status === 200 && response.type === 'basic') {
+        if (response && response.status === 200) {
           const responseToCache = response.clone();
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, responseToCache);
@@ -57,7 +52,6 @@ self.addEventListener('fetch', (event) => {
         return response;
       })
       .catch(() => {
-        // ネットワークエラー時にキャッシュから取得
         return caches.match(event.request);
       })
   );
