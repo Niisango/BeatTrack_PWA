@@ -1,0 +1,62 @@
+@charset "utf-8";
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .glass-morphism {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .glass-morphism {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .light .glass-morphism {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(8px);
+        }
+
+        .tab-active {
+            border-bottom: 2px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 10px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #38bdf8 !important;
+            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+        }
+
+        #installBanner {
+            transform: translateY(100px);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        #installBanner.show { transform: translateY(0); }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+
+        /* Changelog specific styling */
+        .changelog-content h1 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: #3b82f6; }
+        .changelog-content h2 { font-size: 1rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(128,128,128,0.2); }
+        .changelog-content h3 { font-size: 0.875rem; font-weight: 600; margin-top: 1rem; color: #10b981; }
+        .changelog-content p { font-size: 0.75rem; margin-bottom: 0.5rem; opacity: 0.8; }
+        .changelog-content ul { list-style: disc; margin-left: 1.25rem; font-size: 0.75rem; margin-bottom: 1rem; }
+        .changelog-content li { margin-bottom: 0.25rem; }
+        .changelog-content hr { margin: 1.5rem 0; border: none; border-top: 1px dashed rgba(128,128,128,0.3); }
