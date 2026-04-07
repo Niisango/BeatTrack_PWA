@@ -10,7 +10,7 @@ const ASSETS_TO_CACHE = [
   './CHANGELOG.md',
   './style.css',
   './manifest.json',
-  'https://cdn.tailwindcss.com',
+  './tailwind.css',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap'
 ];
 
